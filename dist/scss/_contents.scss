@@ -1,0 +1,97 @@
+// news
+.board-lst-wrap {
+    .lst-sorting {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 20px;
+        li {
+            margin-left: 3px;
+            &.on,
+            &:hover {
+                a {
+                    border: solid 1px $b;
+                    background-color: $b;
+                    color: $w;
+                }
+            }
+        }
+        a {
+            display: block;
+            height: 27px;
+            padding: 0 18px;
+            border: solid 1px #d2d2d2;
+            border-radius: 27px;
+            background-color: $w;
+            line-height: 24px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #818181;
+            box-sizing: border-box;
+        }
+    }
+    .board-lst-cont {
+        li {
+            margin-bottom: 12px;
+        }
+        a {
+            position: relative;
+            display: block;
+            height: 210px;
+            padding: 45px 200px 0 370px;
+            background-color: $w;
+            box-sizing: border-box;
+            &:hover {
+                box-shadow: 25px 25px 40px 0 rgba(0, 0, 0, 0.12);
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    border: 2px solid $prim1;
+                }
+            }
+        }
+        .thumb {
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 321px;
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+        .sort {
+            display: block;
+            margin-bottom: 18px;
+            font-size: 12px;
+            font-weight: 500;
+            color: $prim1;
+            text-transform: uppercase;
+        }
+        .txt {
+            font-size: 22px;
+            font-weight: 500;
+        }
+        .date {
+            position: absolute;
+            top: 76px;
+            right: 50px;
+            font-size: 12px;
+            font-weight: 500;
+            text-align: right;
+            color: #c9c9c9;
+            .md {
+                display: block;
+                font-size: 28px;
+                font-family: "Spoqa Han Sans Neo";
+                font-weight: 400;
+                color: rgba(201, 201, 201, 0.8);
+            }
+        }
+    }
+}
