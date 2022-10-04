@@ -23,7 +23,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-        <script src="./dist/vendor/scrollUp/jquery.scrollUp.min.js"></script>
+        <script src="./dist/vender/scrollUp/jquery.scrollUp.min.js"></script>
         <script src="./dist/js/comm.js"></script>
         <!--[if lt IE 9]>
             <script src="./dist/vendor/html5.js"></script>
@@ -31,8 +31,7 @@
         <![endif]-->
     </head>
 
-    <body>
-        <div class="line-global"><span></span></div>
+    <body class="">
         <div id="u-skip">
             <a href="#gnb">주메뉴 바로가기</a>
             <a href="#main">본문 바로가기</a>
@@ -40,128 +39,158 @@
         <div class="wrap">
             <!-- header -->
             <!-- 마우스 오버시 .on 추가 -->
-            <header id="header" class="">
+            <header id="header">
                 <div class="gnb-overlay-bg"></div>
-                <div class="container">
-                    <h1 id="logo"><a href="index.html" class="img-g">BOSagora</a></h1>
-                    <nav id="gnb">
-                        <div class="gnb-bg"></div>
-                        <h2 class="blind">전체메뉴</h2>
-                        <ul class="navbar-nav gnb-1dep">
-                            <li>
-                                <a href="#"><span>Ecosystem</span></a>
-                                <ul class="gnb-2dep">
-                                    <li>
-                                        <a href="#">무료강좌</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">무료강좌</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">무료강좌</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">무료강좌</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="">
-                                <a href="#"><span>Developers</span></a>
-                                <ul class="gnb-2dep">
-                                    <li class="on">
-                                        <a href="#">Getting Started </a>
-                                        <ul class="gnb-3dep">
-                                            <li><a href="#">- Validator Start ↗</a></li>
-                                            <li><a href="#">- Deploy Smart Contract ↗</a></li>
-                                            <li><a href="#">- ERC20 Tokens ↗</a></li>
-                                            <li><a href="#">- Deploy NFTs ↗</a></li>
+                <div class="grid-wrap"><span></span></div>
+                <div class="hd">
+                    <div class="container">
+                        <h1 id="logo"><a href="index.html" class="img-g">BOSagora</a></h1>
+                        <nav id="gnb">
+                            <h2 class="blind">전체메뉴</h2>
+                            <ul class="navbar-nav gnb-1dep">
+                                <li>
+                                    <a href="#"><span>Ecosystem</span></a>
+                                    <div class="sub">
+                                        <ul class="gnb-2dep m1">
+                                            <li>
+                                                <a href="#">THE9 Token</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">NFT</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Eco Museum</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">EMtaCity</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">T-fi</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">BOA Swap</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">BOA Bridge</a>
+                                            </li>
                                         </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Agora Chain</a>
-                                        <ul class="gnb-3dep">
-                                            <li><a href="#">- Execution layer ↗</a></li>
-                                            <li><a href="#">- Consensus layer ↗</a></li>
-                                            <li><a href="#">- Agora Testnet ↗</a></li>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#"><span>Developers</span></a>
+                                    <div class="sub">
+                                        <ul class="gnb-2dep m2">
+                                            <li>
+                                                <a href="#">Getting Started </a>
+                                                <ul class="gnb-3dep">
+                                                    <li><a href="#">- Validator Start</a></li>
+                                                    <li><a href="#">- Deploy Smart Contract</a></li>
+                                                    <li><a href="#">- ERC20 Tokens</a></li>
+                                                    <li><a href="#">- Deploy NFTs</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#">Agora Chain</a>
+                                                <ul class="gnb-3dep">
+                                                    <li><a href="#">- Execution layer</a></li>
+                                                    <li><a href="#">- Consensus layer</a></li>
+                                                    <li><a href="#">- Agora Testnet</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#">Tools</a>
+                                                <ul class="gnb-3dep">
+                                                    <li><a href="#">- Wallet</a></li>
+                                                    <li><a href="#">- Block Explorer</a></li>
+                                                    <li><a href="#">- SDK</a></li>
+                                                    <li><a href="#">- IDE</a></li>
+                                                    <li><a href="#">- Bridge</a></li>
+                                                    <li><a href="#">- Test Tools</a></li>
+                                                </ul>
+                                            </li>
                                         </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Tools</a>
-                                        <ul class="gnb-3dep">
-                                            <li><a href="#">- Wallet ↗</a></li>
-                                            <li><a href="#">- Block Explorer ↗</a></li>
-                                            <li><a href="#">- SDK ↗</a></li>
-                                            <li><a href="#">- IDE ↗</a></li>
-                                            <li><a href="#">- Bridge ↗</a></li>
-                                            <li><a href="#">- Test Tools ↗</a></li>
+                                    </div>
+                                </li>
+                                <li class="">
+                                    <a href="#"><span>Validator</span></a>
+                                    <div class="sub">
+                                        <ul class="gnb-2dep m3">
+                                            <li>
+                                                <a href="#">Becoming a Validator</a>
+                                                <ul class="gnb-3dep">
+                                                    <li><a href="#">- Checklist</a></li>
+                                                    <li><a href="#">- Install a Agora node(Execution Client)</a></li>
+                                                    <li><a href="#">- Install a Agora node(Consensus Client)</a></li>
+                                                    <li><a href="#">- Staking over 40,000 BOA</a></li>
+                                                    <li><a href="#">- Run a Validator</a></li>
+                                                    <li><a href="#">- FAQ</a></li>
+                                                    <li><a href="#">- Validators list</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#">Getting </a>
+                                                <ul class="gnb-3dep">
+                                                    <li><a href="#">- What is VOTERA</a></li>
+                                                    <li><a href="#">- Participate</a></li>
+                                                    <li><a href="#">- Suggestion list</a></li>
+                                                </ul>
+                                            </li>
                                         </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#"><span>Validator</span></a>
-                                <ul class="gnb-2dep">
-                                    <li><a href="#">menu3-1</a></li>
-                                    <li><a href="#">menu3-2</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#"><span>Earn</span></a>
-                                <ul class="gnb-2dep">
-                                    <li><a href="#">menu4-1</a></li>
-                                    <li><a href="#">menu4-2</a></li>
-                                    <li><a href="#">menu4-3</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#"><span>Community</span></a>
-                                <ul class="gnb-2dep">
-                                    <li><a href="#">menu4-1</a></li>
-                                    <li><a href="#">menu4-2</a></li>
-                                    <li><a href="#">menu4-3</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#" class="none"><span>About</span></a>
-                                <ul class="gnb-2dep">
-                                    <li><a href="#">menu4-1</a></li>
-                                    <li><a href="#">menu4-2</a></li>
-                                    <li><a href="#">menu4-3</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#" class="none"><span>Contact</span></a>
-                                <ul class="gnb-2dep">
-                                    <li><a href="#">menu4-1</a></li>
-                                    <li><a href="#">menu4-2</a></li>
-                                    <li><a href="#">menu4-3</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="util">
-                        <form id="search" action="">
-                            <fieldset>
-                                <legend class="blind">검색</legend>
-                                <div class="search-area">
-                                    <input type="text" maxlength="255" class="input-search" placeholder="BOA TXid" />
-                                    <button id="btn-search" class="btn-search" title="검색">
-                                        <span class="blind">검색</span>
-                                    </button>
-                                </div>
-                            </fieldset>
-                        </form>
-                        <div id="lang">
-                            <button class="btn-lang"><span class="blind">언어선택</span></button>
-                            <ul class="lst-lang">
-                                <li><a href="#">KR</a></li>
-                                <li><a href="#">EN</a></li>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#"><span>Earn</span></a>
+                                    <div class="sub">
+                                        <ul class="gnb-2dep m4">
+                                            <li><a href="#">Staking</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#"><span>Community</span></a>
+                                    <div class="sub">
+                                        <ul class="gnb-2dep m5">
+                                            <li><a href="#">News</a></li>
+                                            <li><a href="#">Socials</a></li>
+                                            <li><a href="#" class="arr">YouTube</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#" class="none"><span>About</span></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="none"><span>Contact</span></a>
+                                </li>
                             </ul>
+                        </nav>
+                        <div class="util">
+                            <form id="search" action="">
+                                <fieldset>
+                                    <legend class="blind">검색</legend>
+                                    <div class="search-area">
+                                        <input type="text" maxlength="255" class="input-search" placeholder="BOA TXid" />
+                                        <button id="btn-search" class="btn-search" title="검색">
+                                            <span class="blind">검색</span>
+                                        </button>
+                                    </div>
+                                </fieldset>
+                            </form>
+                            <div id="lang">
+                                <button class="btn-lang"><span class="blind">언어선택</span></button>
+                                <ul class="lst-lang">
+                                    <li><a href="#">KR</a></li>
+                                    <li><a href="#">EN</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </header>
             <!-- //header -->
+            <!-- grid -->
+            <div class="grid-wrap"><span></span></div>
+            <!-- //grid -->
             <!-- main -->
             <main id="main">
                 <!-- <div class="jumbotron"></div> -->
@@ -340,7 +369,8 @@
                     </section>
                     <!-- news -->
                 </div>
-                <section class="sec-receivenews bg-gray">
+                <section class="sec-g sec-receivenews bg-gray">
+                    <div class="grid-wrap"><span></span></div>
                     <div class="container">
                         <p class="txt">
                             Enter your email address <br />
