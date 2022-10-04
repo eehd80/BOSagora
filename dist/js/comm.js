@@ -11,36 +11,6 @@ $(document).ready(function () {
             }
         });
     }
-    // function gnb() {
-    //     var parent = $("#gnb");
-    //     (body = $("body")),
-    //         (dep1 = parent.find(">ul>li>a")),
-    //         (sub = parent.find(">ul>li>.sub")),
-    //         (last = parent.find(">ul>li:last .sub ul li:last>a"));
-    //     dep1.on("mouseover focusin", function () {
-    //         var t = $(this);
-    //         if (t.next().children().children().length) {
-    //             body.addClass("on-gnb");
-    //             dep1.removeClass("on");
-    //             // t.addClass("on");
-    //             sub.stop().hide();
-    //             t.next().stop().fadeIn(350);
-    //         } else {
-    //             gnbHide();
-    //         }
-    //     });
-    //     last.on("focusout", function () {
-    //         gnbHide();
-    //     });
-    //     parent.on("mouseleave", function () {
-    //         gnbHide();
-    //     });
-    //     function gnbHide() {
-    //         body.removeClass("on-gnb");
-    //         dep1.removeClass("on");
-    //         sub.stop().hide();
-    //     }
-    // }
 
     function gnb() {
         let gnb = $("#gnb");
@@ -71,8 +41,33 @@ $(document).ready(function () {
     depth2Bg();
 
     // scrollup
-    $(function () {
-        $.scrollUp();
+    $("#scrollUp").on("click", function (event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+            $("html, body").animate(
+                {
+                    scrollTop: $(hash).offset().top,
+                },
+                900,
+                function () {
+                    window.location.hash = hash;
+                },
+            );
+        }
+    });
+
+    $(window).scroll(function () {
+        $(".slideanim").each(function () {
+            var pos = $(this).offset().top;
+
+            var winTop = $(window).scrollTop();
+            if (pos < winTop + 600) {
+                $(this).addClass("slide");
+            }
+        });
     });
 
     // swiper-intro

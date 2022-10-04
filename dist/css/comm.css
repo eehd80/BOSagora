@@ -272,20 +272,8 @@ legend {
 }
 
 body {
-  background: url(../../pc.png) 50% 0 no-repeat;
-}
-
-.wrap {
-  opacity: 0.5;
-}
-
-body {
   position: relative;
   background-color: #f5f4f6;
-}
-
-.wrap {
-  padding-top: 200px;
 }
 
 .container {
@@ -299,7 +287,6 @@ body {
 }
 
 #logo {
-  position: absolute;
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -425,12 +412,20 @@ body {
   background-color: #fff;
 }
 
+#header .grid-wrap {
+  display: none;
+}
+
 .scrolled #header {
   overflow: hidden;
 }
 
 .scrolled #header .hd {
   background-color: #fff;
+}
+
+.scrolled #header .grid-wrap {
+  display: block;
 }
 
 #gnb {
@@ -795,6 +790,7 @@ body {
 #main {
   position: relative;
   z-index: 10;
+  padding-top: 200px;
 }
 
 .sec-g {
@@ -950,6 +946,7 @@ body {
 .pagination .btn- {
   padding: 0 4px;
   font-size: 0;
+  opacity: 0.2;
 }
 
 .pagination .btn-::before {
@@ -957,6 +954,10 @@ body {
   font-weight: 900;
   font-size: 20px;
   opacity: 0.3;
+}
+
+.pagination .btn-.active {
+  opacity: 1;
 }
 
 .pagination .btn-prev {
@@ -1121,24 +1122,23 @@ body {
 }
 
 #footer .ft-copyright {
-  position: absolute;
-  bottom: 16px;
-  left: 0;
-  font-size: 10px;
+  margin-top: 90px;
+  font-size: 0.786em;
   color: rgba(220, 222, 230, 0.5);
-  letter-spacing: 1px;
+  letter-spacing: 0.44px;
 }
 
 .ft-social {
   position: absolute;
-  bottom: 16px;
+  bottom: 120px;
   right: 0;
 }
 
 .ft-social .ft-tit {
   margin: 0 0 16px 0;
-  font-size: 10px;
+  font-size: 0.714em;
   text-align: right;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
   letter-spacing: 0.4px;
@@ -1183,9 +1183,9 @@ body {
 }
 
 #scrollUp {
-  position: fixed;
-  bottom: 50px;
-  right: 50px;
+  position: absolute;
+  top: 123px;
+  right: -20px;
   display: block;
   width: 40px;
   height: 60px;
