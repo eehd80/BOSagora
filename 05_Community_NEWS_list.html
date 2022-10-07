@@ -37,14 +37,15 @@
         <div class="wrap">
             <!-- header -->
             <!-- 마우스 오버시 .on 추가 -->
-            <header id="header">
+            <header id="header" class="">
                 <div class="gnb-overlay-bg"></div>
                 <div class="hd">
-                    <div class="grid-wrap"><span></span></div>
+                    <!-- <div class="grid-wrap"><span></span></div> -->
                     <div class="container">
                         <h1 id="logo"><a href="index.html" class="img-g">BOSagora</a></h1>
                         <nav id="gnb">
                             <h2 class="blind">전체메뉴</h2>
+                            <div class="grid-wrap"><span></span></div>
                             <ul class="navbar-nav gnb-1dep">
                                 <li>
                                     <a href="#"><span>Ecosystem</span></a>
@@ -109,7 +110,7 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li class="">
+                                <li>
                                     <a href="#"><span>Validator</span></a>
                                     <div class="sub">
                                         <ul class="gnb-2dep m3">
@@ -186,18 +187,15 @@
                 </div>
             </header>
             <!-- //header -->
-            <!-- grid -->
-            <div class="grid-wrap"><span></span></div>
-            <!-- //grid -->
             <!-- main -->
             <main id="main">
-                <!-- <div class="jumbotron"></div> -->
+                <div class="grid-wrap"><span></span></div>
                 <!-- 상단 타이틀 -->
-                <div class="container">
-                    <section class="sec-areatop">
-                        <div class="subtit-top">
+                <section class="sec-areatop">
+                    <div class="container">
+                        <div class="subtit-area">
                             <span class="co">BOSagora</span>
-                            <b class="subtit">NEWS</b>
+                            <h2 class="subtit">NEWS</h2>
                             <p class="txt">
                                 If you would like to receive news from Boss Agora, <br />
                                 please enter your e-mail address.
@@ -214,9 +212,11 @@
                                 </fieldset>
                             </form>
                         </div>
-                    </section>
+                    </div>
+                </section>
 
-                    <section class="board-lst-wrap">
+                <section class="sec-g board-lst-wrap">
+                    <div class="container">
                         <div class="board-lst-head">
                             <ul class="lst-sorting">
                                 <li><a href="#">NTF</a></li>
@@ -354,9 +354,12 @@
                             <a href="#" class="num">5</a>
                             <a href="#" class="btn- btn-next active">다음</a>
                         </nav>
-                    </section>
+                    </div>
+                </section>
+                <!-- news -->
 
-                    <section class="sec-g sec-inthepress">
+                <section class="sec-g sec-inthepress">
+                    <div class="container">
                         <h2 class="tit-sub">In the PRESS</h2>
                         <ul class="lst-press">
                             <li class="coindesk"><a href="#">coindesk</a></li>
@@ -364,11 +367,11 @@
                             <li class="bloom"><a href="#">Bloomberg</a></li>
                             <li class="yahoo"><a href="#">yahoo! finance</a></li>
                         </ul>
-                    </section>
-                    <!-- news -->
-                </div>
+                    </div>
+                </section>
+
                 <section class="sec-g sec-receivenews bg-gray">
-                    <div class="grid-wrap"><span></span></div>
+                    <div class="grid-wrap grid-sec"><span></span></div>
                     <div class="container">
                         <p class="txt">
                             Enter your email address <br />

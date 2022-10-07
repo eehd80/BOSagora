@@ -1,6 +1,41 @@
 // 메인 페이지
 
 .jumbotron {
-    height: 1000px;
+    padding: 304px 0 176px;
     background: $prim1;
+    .container {
+        position: relative;
+        display: flex;
+    }
+    em {
+        display: block;
+        font-family: "Poppins";
+        font-size: 5.286em;
+        color: #f5f4f6;
+        line-height: 1.2;
+        letter-spacing: -1.5px;
+    }
+    strong {
+        display: block;
+        font-family: "Poppins";
+        font-size: 6.786em;
+        font-weight: bold;
+        line-height: 1.2;
+        letter-spacing: -1.9px;
+        color: #030014;
+        span {
+            font-size: 75px;
+        }
+    }
+    p {
+        margin-top: 9px;
+        font-size: 1.214em;
+        line-height: 1.65;
+        color: $b;
+    }
+    .img {
+        position: absolute;
+        bottom: -61px;
+        right: -88px;
+    }
 }

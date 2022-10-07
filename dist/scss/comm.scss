@@ -1,12 +1,48 @@
 @charset "UTF-8";
 @import "reset", "variables", "mixins", "fonts";
 
+// btn
+.btn-g {
+    display: inline-block;
+    margin-top: 58px;
+    padding: 9px 18px 12px 22px;
+    border-radius: 2px;
+    border: 1px solid $prim1;
+    background-color: $b;
+    font-size: 15px;
+    font-weight: 500;
+    color: $w;
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        margin-left: 28px;
+        background: url(../../images/img-comm.png) -240px 0 no-repeat;
+        vertical-align: middle;
+    }
+    &:hover {
+        background-color: $w;
+        color: $prim1;
+        &::after {
+            background-position: -260px 0;
+        }
+    }
+    &.white {
+        border: solid 1px #30333e;
+        background-color: $w;
+        color: $b;
+    }
+}
+
 // 공통 레이아웃, 공통 디자인
 body {
     position: relative;
     background-color: $bg-g;
 }
 .container {
+    position: relative;
+    z-index: 10;
     width: 100%;
     max-width: 1280px;
     margin: auto;
@@ -14,10 +50,10 @@ body {
 .bg-gray {
     background-color: #ebeaec;
 }
+.bg-w {
+    background-color: $w;
+}
 #logo {
-    @include posY;
-    left: -240px;
-    z-index: 1000;
     display: flex;
     align-items: center;
     a {
@@ -29,11 +65,6 @@ body {
         text-indent: -9999px;
     }
 }
-// @media screen and (max-width: 1800px) {
-//     #logo {
-//         left: 0;
-//     }
-// }
 
 // line-global
 .grid-wrap {
@@ -41,7 +72,7 @@ body {
     top: 0;
     bottom: 0;
     left: 50%;
-    z-index: 1;
+    z-index: -1;
     transform: translateX(-50%);
     width: 1px;
     height: 100%;
@@ -89,6 +120,9 @@ body {
             background-color: $line3;
         }
     }
+    &.grid-sec {
+        z-index: 1;
+    }
 }
 #header {
     .hd {
@@ -97,42 +131,71 @@ body {
         left: 0;
         right: 0;
         z-index: 1000;
+        display: flex;
+    }
+    .hd-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 0;
+        background-color: $bg-g;
     }
     .container {
         position: relative;
         // z-index: 100;
         display: flex;
         justify-content: space-between;
+        max-width: 1944px;
+        margin: 0 auto;
+        padding: 40px 4% 0;
     }
     .gnb-overlay-bg {
+        display: none;
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        z-index: 1000;
-        visibility: hidden;
-        opacity: 0;
-        filter: Alpha(opacity=0);
+        z-index: 100;
         background: rgba(0, 0, 0, 0.5);
         -webkit-transition: all 0.3s;
         transition: all 0.3s;
     }
-    .grid-wrap {
-        z-index: 10000;
-    }
-    &.active .hd {
-        background-color: $w;
+    &.active {
+        .hd {
+            background-color: $bg-g;
+        }
+        .gnb-overlay-bg {
+            display: block;
+        }
+        .grid-wrap {
+            display: block;
+        }
     }
     .grid-wrap {
         display: none;
     }
 }
+@media screen and (max-width: 1500px) {
+    #header {
+        .hd {
+            width: 100%;
+        }
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 40px 0 0;
+        }
+    }
+}
+
 .scrolled {
     #header {
         overflow: hidden;
         .hd {
-            background-color: $w;
+            background-color: $bg-g;
         }
         .grid-wrap {
             display: block;
@@ -141,8 +204,8 @@ body {
 }
 
 #gnb {
-    // position: relative;
-    margin: 0 -33px 0 auto;
+    margin-left: auto;
+    margin-right: 25px;
     .gnb-1dep {
         display: flex;
         justify-content: space-between;
@@ -178,8 +241,6 @@ body {
                 position: relative;
                 display: flex;
                 align-items: center;
-                // margin-left: -44px;
-                height: 134px;
                 padding: 0 33px;
                 font-size: 1.071em;
                 font-weight: 500;
@@ -200,8 +261,8 @@ body {
                 > span {
                     position: relative;
                     display: block;
-                    height: 54px;
-                    line-height: 54px;
+                    height: 57px;
+                    line-height: 53px;
                     &::after {
                         content: "";
                         @include posX;
@@ -224,16 +285,14 @@ body {
         right: 0;
         // display: none;
         max-height: 0;
-        background-color: $w;
+        background-color: $bg-g;
         transition: all 0.1s;
     }
     .gnb-2dep {
         display: flex;
-        max-width: 1280px;
+        max-width: 1944px;
         margin: auto;
         padding: 44px 36px;
-        // opacity: 0;
-        // visibility: hidden;
         box-sizing: border-box;
         text-align: left;
         white-space: nowrap;
@@ -307,6 +366,30 @@ body {
         }
     }
 }
+@media screen and (max-width: 1500px) {
+    #gnb {
+        .gnb-1dep > li > a {
+            padding: 0 30px;
+        }
+        .gnb-2dep {
+            &.m1 {
+                padding-left: 342px;
+            }
+            &.m2 {
+                padding-left: 478px;
+            }
+            &.m3 {
+                padding-left: 620px;
+            }
+            &.m4 {
+                padding-left: 749px;
+            }
+            &.m5 {
+                padding-left: 842px;
+            }
+        }
+    }
+}
 
 #search {
     display: flex;
@@ -318,7 +401,7 @@ body {
         width: 140px;
         height: 34px;
         padding: 0 10px 0 20px;
-        border-radius: 20px;
+        border-radius: 34px;
         background-color: $bg1;
     }
     .input-search {
@@ -343,10 +426,23 @@ body {
         background: url(../../images/img-comm.png) -180px 0 no-repeat;
     }
 }
+@media screen and (max-width: 1500px) {
+    #search {
+        .search-area {
+            width: 34px;
+            padding: 0;
+        }
+        .input-search {
+            display: none;
+        }
+        .btn-search {
+            right: 8px;
+            transform: translateY(-50%);
+        }
+    }
+}
+
 .util {
-    position: absolute;
-    @include posY;
-    right: -240px;
     display: flex;
 }
 #lang {
@@ -406,6 +502,9 @@ body {
     position: relative;
     z-index: 10;
     padding-top: 200px;
+    &.intro {
+        padding-top: 0;
+    }
 }
 // sec-g
 .sec-g {
@@ -423,12 +522,28 @@ body {
     }
 }
 
+.sec-int {
+    padding: 177px 0;
+    text-align: center;
+    .tit {
+        font-size: 4.286em;
+        font-weight: 600;
+    }
+    .txt {
+        margin-top: 5px;
+        font-size: 1.5em;
+    }
+}
+
 .sec-areatop {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin: 15px 0 149px -7px;
-    .subtit-top {
+    margin: 15px 0 149px;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    .subtit-area {
+        margin-left: -7px;
         .co {
             display: block;
             line-height: 0.9;
@@ -452,9 +567,33 @@ body {
         }
     }
     .sub-top {
-        width: calc(50% - 4px);
+        width: 50%;
     }
 }
+.sec-areatop-sub {
+    .history {
+        padding: 14px 0;
+        font-size: 13px;
+        font-weight: 500;
+        color: #666;
+        span {
+            color: #aaa;
+        }
+    }
+    .subtit {
+        margin: 17px 0 0 -3px;
+        font-size: 58px;
+        font-weight: 500;
+        color: #090e23;
+        line-height: 1.25;
+    }
+    .updated {
+        margin-top: 13px;
+        font-size: 11px;
+        color: #aaa;
+    }
+}
+
 .input-email {
     position: relative;
     .search-area {
@@ -476,7 +615,6 @@ body {
         bottom: 0;
         display: block;
         width: 87px;
-        height: 48px;
         background-color: $b;
         font-size: 14px;
         font-weight: 500;
@@ -582,7 +720,7 @@ body {
 
 //inthepress
 .sec-inthepress {
-    margin-top: 170px;
+    padding: 170px 0 145px;
     text-align: center;
     .tit-sub {
         font-size: 60px;
@@ -632,7 +770,7 @@ body {
 }
 .sec-receivenews {
     overflow: hidden;
-    margin-top: 145px;
+    // margin-top: 145px;
     padding: 140px 0 148px;
     .txt {
         margin-left: -6px;

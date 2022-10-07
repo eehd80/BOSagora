@@ -1,44 +1,54 @@
 $(document).ready(function () {
     // header
-    function headerfixed() {
-        $(window).on("scroll", function () {
-            var height = $("#header").height();
-            var scroll = $(window).scrollTop();
-            if (scroll > height) {
-                $("body").addClass("scrolled");
+
+    // 스크롤시 header 변경
+    var lastScrollTop = 0;
+
+    $(window).scroll(function () {
+        let scrollTop = $(this).scrollTop();
+
+        if (scrollTop >= 100) {
+            if (scrollTop > lastScrollTop && lastScrollTop > 0) {
+                $(".hd").css("top", "-100px");
             } else {
-                $("body").removeClass("scrolled");
+                $(".hd").css("top", "0px");
+                $("body").addClass("scrolled");
             }
-        });
-    }
 
-    function gnb() {
-        let gnb = $("#gnb");
-        header = $("#header");
+            lastScrollTop = scrollTop;
+        } else {
+            $("body").removeClass("scrolled");
+        }
+    });
 
-        gnb.on("mouseover focusin", function () {
-            header.addClass("active");
-        }).on("mouseleave focusout", function () {
-            header.removeClass("active");
-        });
-    }
+    let gnb = $("#gnb");
+    header = $("#header");
 
-    function depth2Bg() {
-        let dep2Height = $(".gnb-1dep .on .gnb-2dep").height(),
-            dep2Bg = $(".gnb-2dep-bg"),
-            dep1Li = $(".gnb-1dep li");
+    gnb.on("mouseover focusin", function () {
+        header.addClass("active");
+    }).on("mouseleave focusout", function () {
+        header.removeClass("active");
+    });
 
-        console.log(dep2Height);
+    // function depth2Bg() {
+    //     let dep1Li = $(".gnb-1dep li"),
+    //         dep2Height = $(".gnb-1dep .on .gnb-2dep").height(),
+    //         dep2Bg = $(".gnb-2dep-bg");
 
-        dep1Li.on("mouseover focusin", function () {
-            dep2Bg = dep2Height;
-            console.log(dep2Height);
-        });
-    }
+    //     console.log(dep2Height);
 
-    headerfixed();
-    gnb();
-    depth2Bg();
+    //     dep1Li.on("mouseenter focusin", function () {
+    //         $(this).addClass("on");
+    //         $(this).each(function (index) {
+    //             let height = $(".on .sub").innerheight();
+    //         });
+
+    //         console.log(height);
+    //     });
+    // }
+
+    // // // gnb();
+    // depth2Bg();
 
     // scrollup
     $("#scrollUp").on("click", function (event) {
